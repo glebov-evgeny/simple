@@ -1,0 +1,8 @@
+.s-intro {
+  background: var(--color-main);
+  color: var(--color-second);
+  padding: torem(60) 0 0;
+  @include _1440 {
+    padding: torem(120) 0 0;
+  }
+}

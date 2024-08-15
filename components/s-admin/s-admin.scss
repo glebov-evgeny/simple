@@ -1,0 +1,20 @@
+/* stylelint-disable no-descending-specificity */
+
+.s-admin {
+  color: var(--color-second);
+  &__title{
+    font-size: torem(24);
+    line-height: 135%;
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-second);
+    margin-bottom: torem(15);
+    @include _768 {
+      font-size: torem(28);
+    }
+  }
+  // @include _768 {
+  //   padding: var(--a-padding-x4) 0;
+  // }
+}
+/* stylelint-enable no-descending-specificity */

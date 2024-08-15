@@ -1,0 +1,86 @@
+.s-moc {
+  background: var(--color-main);
+  color: var(--color-second);
+  padding: torem(60) 0;
+  @include _1440 {
+    padding: torem(120) 0;
+  }
+  &__container{
+    transition: .3s;
+    display: grid;
+    grid-template-columns: 1fr;
+    @include _768 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: torem(30);
+    }
+    @include _1440 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: torem(60);
+      align-items: flex-start;
+    }
+  }
+  &__main {
+    position: relative;
+    background: var(--color-second);
+    color: var(--color-main);
+    padding: var(--a-padding-x4);
+    border-radius: 0 var(--border-radius-x3) 0  var(--border-radius-x3) ;
+    @include _768 {
+      padding: var(--a-padding-x8);
+    }
+    &::before{
+      content: '';
+      width: 50%;
+      height: torem(20);
+      background: var(--color-second);
+      position: absolute;
+      left: 0;
+      top: torem(-15);
+      border-radius: var(--border-radius-x3) var(--border-radius-x3) 0 0;
+    }
+    &::after{
+      content: '';
+      width: 40%;
+      height: torem(20);
+      background: var(--color-second);
+      position: absolute;
+      right: 0;
+      bottom: torem(-15);
+      border-radius: 0 0 var(--border-radius-x3) var(--border-radius-x3);
+    }
+  }
+  &__aside{
+    padding: 0 var(--a-padding-x4);
+    margin-top: torem(50);
+    display: flex;
+    flex-direction: column-reverse;
+    @include _768 {
+      flex-direction: column;
+      padding: var(--a-padding-x8);
+      margin: 0;
+    }
+    &-content{
+      margin-top: torem(50);
+      @include _768 {
+        margin: 0;
+      }
+    }
+    &-decoration{
+      animation: smallSwing 5s infinite linear;
+      @include _768 {
+        margin-top: torem(50);
+      }
+      @include _1440 {
+        max-width: torem(450);
+      }
+    }
+  }
+  &__title{
+    color: var(--color-main);
+  }
+  &__description{
+    color: var(--color-main);
+  }
+}

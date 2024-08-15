@@ -1,0 +1,27 @@
+/* stylelint-disable */
+:root {
+  --color-main: #fff;
+  --color-second: #272727;
+  --color-white: #fff;
+  --color-black: #272727;
+  --color-grey: #c0c0c0;
+  --color-orange: #ff9400;
+  --color-error: #ff5100;
+  --color-header: #fff;
+  --color-shadow: #eee;
+  .dark-themes {
+    --color-main: #272727;
+    --color-second: #fff;
+    --color-white: #fff;
+    --color-black: #272727;
+    --color-grey: #c0c0c0;
+    --color-orange: #ff9400;
+    --color-error: #ff5100;
+    --color-header: #fff;
+    --color-shadow: #403f3f;
+    .s-header__login-image {
+      filter: invert(1);
+    }
+  }
+}
+/* stylelint-enable */
