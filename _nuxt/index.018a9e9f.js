@@ -1,0 +1,1 @@
+import{_ as o}from"./s-lk.77ef229c.js";import{c as s,f as t,b as _}from"./entry.5e91792b.js";import"./user.64a82b5a.js";const a={class:"s-main"},f={__name:"index",setup(c){return(n,r)=>{const e=o;return _(),s("main",a,[t(e)])}}};export{f as default};
