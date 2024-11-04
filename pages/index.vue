@@ -1,18 +1,33 @@
 <template>
   <main class="s-main">
-    <s-intro />
+    <s-loader />
+    <swiper v-bind="swiperConfigMain" class="s-main__swiper-vertical">
+      <swiper-slide><s-intro /></swiper-slide>
+      <swiper-slide><s-second /></swiper-slide>
+    </swiper>
+    <s-popup-cookie
+      v-if="popupCookieIsShow"
+      @close-popup="closePopupCookie"
+      @close-popup-with-agreement="setArgeementOnCookie"
+    />
   </main>
-  <s-popup-cookie
-    v-if="popupCookieIsShow"
-    @close-popup="closePopupCookie"
-    @close-popup-with-agreement="setArgeementOnCookie"
-  />
 </template>
 <script setup>
+import { Mousewheel, Pagination } from 'swiper/modules';
 const popupCookieIsShow = ref(false);
 const userAgreeCookie = useCookie('userAgreeCookie', {
   default: () => null,
   watch: 'shallow',
+});
+
+const swiperConfigMain = reactive({
+  slidesPerView: '1',
+  mousewheel: true,
+  direction: 'vertical',
+  pagination: {
+    clickable: true,
+  },
+  modules: [Mousewheel, Pagination],
 });
 
 const closePopupCookie = () => {

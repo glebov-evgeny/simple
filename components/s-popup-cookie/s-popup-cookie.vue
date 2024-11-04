@@ -1,7 +1,7 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <div class="s-popup-cookie" :class="[{ '_animated': isAnimated }]" @click.stop="popupIsClosed" >
-    <div class="s-popup-cookie__content" :class="[{ '_animated': isAnimated }]" @click.stop>
+  <div class="s-popup-cookie" :class="[{ animated: isAnimated }]" @click.stop="popupIsClosed">
+    <div class="s-popup-cookie__content" :class="[{ animated: isAnimated }]" @click.stop>
       <div class="s-popup-cookie__close" @click.stop="popupIsClosed">
         <svg class="s-popup-cookie__close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
           <path

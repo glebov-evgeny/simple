@@ -1,5 +1,5 @@
 <template>
-  <section class="s-intro full">intro</section>
+  <section class="s-second full">s-second</section>
 </template>
 
 <script setup>
@@ -19,5 +19,5 @@
 </script>
 
 <style lang="scss">
-@import './s-intro.scss';
+@import './s-second.scss';
 </style>
