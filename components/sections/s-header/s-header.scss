@@ -1,3 +1,4 @@
+/* stylelint-disable */
 .s-header {
   padding: var(--a-padding-x1) 0;
   background: var(--color-main);
@@ -78,4 +79,44 @@
       pointer-events: unset;
     }
   }
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .ham {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.5s;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .hamRotate.active {
+      transform: rotate(45deg);
+    }
+    .hamRotate180.active {
+      transform: rotate(180deg);
+    }
+    .line {
+      fill: none;
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      stroke: var(--color-black);
+      stroke-width: 6.5;
+      stroke-linecap: round;
+    }
+    .hamR .top {
+      stroke-dasharray: 40 121;
+    }
+    .hamR .bottom {
+      stroke-dasharray: 40 121;
+    }
+    .hamR.active .top {
+      stroke-dashoffset: -68px;
+    }
+    .hamR.active .bottom {
+      stroke-dashoffset: -68px;
+    }
+  }
 }
+/* stylelint-enable */

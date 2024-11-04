@@ -53,14 +53,16 @@ export default defineNuxtConfig({
       ],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
-    baseURL: '/simple/',
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/styles/main.scss'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: ['~/components'],
+  components: {
+    global: true,
+    dirs: ['~/components/sections', '~/components/molecules', '~/components/atoms'],
+  },
 
   runtimeConfig: {
     public: {},

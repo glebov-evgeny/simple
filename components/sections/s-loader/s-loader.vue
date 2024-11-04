@@ -21,7 +21,7 @@ const finish = () => {
 
 onMounted(() => {
   start();
-  setTimeout(() => finish(), 1000);
+  setTimeout(() => finish(), 600);
 });
 </script>
 
