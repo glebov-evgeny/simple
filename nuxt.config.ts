@@ -5,7 +5,6 @@ import eslintPlugin from 'vite-plugin-eslint';
 export default defineNuxtConfig({
   ssr: true,
   debug: true,
-
   vite: {
     plugins: [eslintPlugin()],
     css: {
@@ -54,6 +53,7 @@ export default defineNuxtConfig({
       ],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
+    baseURL: '/simple/',
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
