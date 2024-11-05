@@ -2,6 +2,7 @@
   <div :class="['s-layout', { 'dark-themes': isLightThemes }]">
     <s-header @handler-change-themes="changeColorThemes" />
     <NuxtPage />
+    <s-footer @handler-change-themes="changeColorThemes" />
   </div>
 </template>
 

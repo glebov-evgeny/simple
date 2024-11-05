@@ -9,6 +9,15 @@
   --color-error: #ff5100;
   --color-header: #fff;
   --color-shadow: #eee;
+  .stop-color-primary-700 {
+    stop-color: #d11781;
+  }
+  .stop-color-secondary-900 {
+    stop-color: #55217b;
+  }
+  .fill-secondary-900 {
+    fill: #55217b;
+  }
   .dark-themes {
     --color-main: #272727;
     --color-second: #fff;
@@ -21,6 +30,15 @@
     --color-shadow: #403f3f;
     .s-header__login-image {
       filter: invert(1);
+    }
+    .stop-color-primary-700 {
+      stop-color: #d11781;
+    }
+    .stop-color-secondary-900 {
+      stop-color: #ba9ad1;
+    }
+    .fill-secondary-900 {
+      fill: #b29ec0;
     }
   }
 }

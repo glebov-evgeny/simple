@@ -1,0 +1,42 @@
+/* stylelint-disable no-descending-specificity */
+
+.s-footer {
+  padding: var(--a-padding-x4) 0;
+  color: var(--color-main);
+  background: var(--color-second);
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__theme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: torem(25);
+    height: torem(25);
+    margin-right: torem(8);
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+
+    svg {
+      transition: 0.3s;
+
+      path {
+        fill: var(--color-main);
+      }
+    }
+  }
+}
+/* stylelint-enable no-descending-specificity */

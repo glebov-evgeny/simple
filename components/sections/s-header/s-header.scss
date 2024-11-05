@@ -1,6 +1,6 @@
 /* stylelint-disable */
 .s-header {
-  padding: var(--a-padding-x1) 0;
+  padding: var(--a-padding-x2) 0;
   background: var(--color-main);
   border-bottom: torem(1) solid var(--color-grey);
 
@@ -12,10 +12,12 @@
 
   &__logo {
     margin-right: torem(15);
-    color: var(--color-second);
-    font-size: torem(20);
-    font-weight: 900;
-    text-transform: uppercase;
+    svg {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   &__logic {
@@ -101,7 +103,7 @@
     .line {
       fill: none;
       transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-      stroke: var(--color-black);
+      stroke: var(--color-second);
       stroke-width: 6.5;
       stroke-linecap: round;
     }

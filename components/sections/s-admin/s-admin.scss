@@ -1,0 +1,23 @@
+/* stylelint-disable no-descending-specificity */
+
+.s-login {
+  color: var(--color-second);
+
+  &__title {
+    @include _768 {
+      font-size: torem(24);
+    }
+
+    margin-bottom: torem(15);
+    color: var(--color-second);
+    font-size: torem(18);
+    font-weight: 600;
+    line-height: 135%;
+    text-align: center;
+  }
+
+  // @include _768 {
+  //   padding: var(--a-padding-x4) 0;
+  // }
+}
+/* stylelint-enable no-descending-specificity */

@@ -1,0 +1,68 @@
+/* stylelint-disable no-descending-specificity */
+
+.s-login {
+  color: var(--color-second);
+
+  &__title {
+    @include _768 {
+      font-size: torem(24);
+    }
+
+    margin-bottom: torem(15);
+    color: var(--color-second);
+    font-size: torem(18);
+    font-weight: 600;
+    line-height: 135%;
+    text-align: center;
+  }
+
+  &__formbox {
+    max-width: torem(420);
+    margin: torem(24) auto 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: var(--a-padding-x2) var(--a-padding-x1);
+    border: torem(1) solid var(--color-grey);
+    border-radius: var(--border-radius-x1);
+
+    &-input {
+      width: 100%;
+      min-height: torem(40);
+      margin-bottom: torem(10);
+      padding: 0 torem(8);
+      color: var(--color-second);
+      background: transparent;
+      border: none;
+      font-size: torem(16);
+      font-weight: 600;
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: torem(40);
+      color: var(--color-black);
+      background: var(--color-orange);
+      border: none;
+      border-radius: var(--border-radius-x1);
+      outline: none;
+      font-size: torem(14);
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  &__information {
+    margin-top: torem(30);
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+/* stylelint-enable no-descending-specificity */

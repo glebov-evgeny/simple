@@ -1,6 +1,6 @@
 <template>
   <main class="s-main">
-    <s-loader />
+    <!-- <s-loader /> -->
     <swiper v-bind="swiperConfigMain" class="s-main__swiper-vertical">
       <swiper-slide><s-intro /></swiper-slide>
       <swiper-slide><s-second /></swiper-slide>

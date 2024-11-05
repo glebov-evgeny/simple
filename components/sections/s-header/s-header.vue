@@ -2,9 +2,9 @@
 <template>
   <header class="s-header">
     <div class="s-header__container l-wide">
-      <nuxt-link to="/" class="s-header__logo">Logo</nuxt-link>
+      <nuxt-link to="/" class="s-header__logo"><ALogo /> </nuxt-link>
       <div class="s-header__logic">
-        <button class="s-header__theme" type="button" @click="changeThemes">
+        <!-- <button class="s-header__theme" type="button" @click="changeThemes">
           <svg
             width="24"
             height="24"
@@ -24,7 +24,7 @@
               </clipPath>
             </defs>
           </svg>
-        </button>
+        </button> -->
         <div class="s-header__menu" @click="toggleHam">
           <svg :class="['ham hamRotate hamR', { active: isOpen }]" viewBox="0 0 100 100" width="35">
             <path
@@ -38,12 +38,35 @@
             />
           </svg>
         </div>
+        <!--
+        <nuxt-link to="/admin" :class="['s-header__link', { 's-header__link-active': currentUser.uid }]">
+          <img class="s-header__login-image" src="/images/icons/lk.png" />
+        </nuxt-link>
+        <button v-if="!currentUser.uid" class="s-header__login" @click="checkLogin">
+          <img class="s-header__login-image" src="/images/icons/login.png" />
+        </button>
+        <button v-else class="s-header__login" @click="loginClean">
+          <img class="s-header__login-image" src="/images/icons/logout.png" />
+        </button>
+        -->
       </div>
     </div>
   </header>
 </template>
 
 <script setup>
+import ALogo from '~/components/atoms/a-logo/a-logo.vue';
+import { useUserStore } from '~/store/user';
+const currentUser = useUserStore();
+const router = useRouter();
+const userInformation = useCookie('userInformation');
+const userCorrect = ref(false);
+
+const checkLogin = () => {
+  if (!userInformation.value) {
+    router.push({ path: '/authorization' });
+  }
+};
 const emit = defineEmits(['handler-change-themes']);
 const isOpen = ref(false);
 const toggleHam = () => {
@@ -52,6 +75,23 @@ const toggleHam = () => {
 const changeThemes = () => {
   emit('handler-change-themes');
 };
+const loginClean = () => {
+  /* удаление информации о пользователе из стора и кук, редирект на главную страницу */
+  currentUser.$reset();
+  userInformation.value = null;
+  router.push({ path: '/' });
+  userCorrect.value = false;
+};
+
+const getInformationFromCookie = async () => {
+  if (userInformation.value) {
+    currentUser.setUser(userInformation.value.email, userInformation.value.id);
+    userCorrect.value = true;
+  }
+};
+onMounted(() => {
+  getInformationFromCookie();
+});
 </script>
 
 <style lang="scss">
