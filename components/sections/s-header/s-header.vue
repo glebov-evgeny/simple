@@ -50,6 +50,14 @@
         </button>
         -->
       </div>
+
+      <div :class="['s-header__nav', { active: isOpen }]">
+        <nav class="s-header__nav-items">
+          <p class="s-header__nav-item">Занятия с логопедом</p>
+          <p class="s-header__nav-item">Занятия с психологом</p>
+          <p class="s-header__nav-item">Развивающие занятия</p>
+        </nav>
+      </div>
     </div>
   </header>
 </template>

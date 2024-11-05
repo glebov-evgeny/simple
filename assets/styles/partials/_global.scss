@@ -29,9 +29,9 @@ a {
     --layout-width: 58rem; // 760px
   }
 
-  // @media all and (min-width: 1140px) {
-  //   --layout-width: 62rem; // 992px
-  // }
+  @media all and (min-width: 1140px) {
+    --layout-width: 68rem; // 992px
+  }
 
   @media all and (min-width: 1440px) {
     --layout-width: 90rem; // 1440px

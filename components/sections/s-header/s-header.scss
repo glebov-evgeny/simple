@@ -2,8 +2,10 @@
 .s-header {
   padding: var(--a-padding-x2) 0;
   background: var(--color-main);
-  border-bottom: torem(1) solid var(--color-grey);
-
+  // border-bottom: torem(1) solid var(--color-grey);
+  @include _992 {
+    padding: var(--a-padding-x8) 0;
+  }
   &__container {
     display: flex;
     justify-content: space-between;
@@ -17,6 +19,10 @@
       width: 100%;
       max-width: 100%;
       height: auto;
+      max-height: torem(32);
+      @include _992 {
+        max-height: torem(64);
+      }
     }
   }
 
@@ -85,6 +91,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include _992 {
+      display: none;
+    }
     .ham {
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
@@ -118,6 +127,111 @@
     }
     .hamR.active .bottom {
       stroke-dashoffset: -68px;
+    }
+  }
+  &__nav {
+    position: fixed;
+    width: 100%;
+    background: var(--color-main);
+    top: torem(50);
+    left: 0;
+    z-index: 10;
+    height: torem(0);
+    transition: 0.3s ease-out;
+    overflow: hidden;
+    border-radius: 0 0 torem(32) torem(32);
+    @include _992 {
+      position: static;
+      height: auto;
+      border-radius: unset;
+      background: transparent;
+    }
+    &-items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include _992 {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+    &.active {
+      height: torem(192);
+      padding-top: torem(32);
+      @include _992 {
+        padding: 0;
+        height: auto;
+      }
+    }
+    &-item {
+      position: relative;
+      font-size: torem(16);
+      font-weight: 600;
+      padding: torem(10);
+      width: 100%;
+      text-align: center;
+      color: var(--color-second);
+      cursor: pointer;
+      @include _992 {
+        padding: 0;
+        width: auto;
+        font-weight: 400;
+        margin-left: torem(32);
+        &:after {
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(
+            90deg,
+            rgba(131, 58, 180, 1) 0%,
+            rgba(253, 29, 29, 1) 50%,
+            rgba(252, 176, 69, 1) 100%
+          );
+          content: '';
+          transition: width 0.5s;
+        }
+        &:hover {
+          &:after {
+            width: 100%;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            background: linear-gradient(
+              90deg,
+              rgba(131, 58, 180, 1) 0%,
+              rgba(253, 29, 29, 1) 50%,
+              rgba(252, 176, 69, 1) 100%
+            );
+            content: '';
+            transition: width 0.5s;
+          }
+        }
+      }
+      @include _1440 {
+        font-size: torem(20);
+      }
+      &:not(:last-child) {
+        &:before {
+          content: '';
+          width: torem(32);
+          height: 1px;
+          background: var(--color-second);
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0.2;
+          @include _992 {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
