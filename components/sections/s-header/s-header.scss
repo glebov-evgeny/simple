@@ -13,17 +13,9 @@
   }
 
   &__logo {
+    width: 100%;
+    max-width: 280px;
     margin-right: torem(15);
-    svg {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      max-height: torem(32);
-      @include _992 {
-        max-height: torem(64);
-      }
-    }
   }
 
   &__logic {
@@ -133,7 +125,7 @@
     position: fixed;
     width: 100%;
     background: var(--color-main);
-    top: torem(50);
+    top: torem(48);
     left: 0;
     z-index: 10;
     height: torem(0);
@@ -159,6 +151,10 @@
     &.active {
       height: torem(192);
       padding-top: torem(32);
+      @include _576 {
+        height: torem(176);
+        padding-top: torem(16);
+      }
       @include _992 {
         padding: 0;
         height: auto;
@@ -166,17 +162,19 @@
     }
     &-item {
       position: relative;
-      font-size: torem(16);
+      font-size: torem(12);
       font-weight: 600;
+      text-transform: uppercase;
       padding: torem(10);
       width: 100%;
       text-align: center;
       color: var(--color-second);
       cursor: pointer;
+
       @include _992 {
         padding: 0;
         width: auto;
-        font-weight: 400;
+        font-size: torem(10);
         margin-left: torem(32);
         &:after {
           display: block;
@@ -213,8 +211,8 @@
           }
         }
       }
-      @include _1440 {
-        font-size: torem(20);
+      @include _1200 {
+        font-size: torem(16);
       }
       &:not(:last-child) {
         &:before {

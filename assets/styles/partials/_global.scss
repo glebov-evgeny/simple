@@ -22,19 +22,22 @@ a {
 
 :root {
   --layout-width: 100%;
-  --layout-padding: 5rem; // 80px
-  --layout-v-padding: 3.75rem; // 60px
+  --layout-padding: 0 0.75rem; // 12px
+  --scale: 100vw / 360;
 
-  @media all and (min-width: 768px) {
-    --layout-width: 58rem; // 760px
+  @media (min-width: 540px) {
+    --scale: 100vw / 576;
   }
 
-  @media all and (min-width: 1140px) {
-    --layout-width: 68rem; // 992px
+  @media (min-width: 768px) {
+    --layout-padding: 0 1rem; // 16px
+    --scale: 100vw / 768;
   }
 
-  @media all and (min-width: 1440px) {
+  @media (min-width: 1200px) {
+    --scale: 100vw / 1920;
     --layout-width: 90rem; // 1440px
+    --layout-padding: 0 2.5rem; // 40px
   }
 }
 
@@ -55,8 +58,8 @@ a {
 .l-wide {
   max-width: var(--layout-width);
   margin: 0 auto;
-  padding: 0 1rem;
-  transition: max-width 0.5s ease;
+  padding: var(--layout-padding);
+  transition: max-width 0.2s ease;
 }
 
 .s-padding {

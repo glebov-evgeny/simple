@@ -1,0 +1,16 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-second);
+
+  &__title {
+    font-size: torem(18);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    font-size: torem(14);
+    font-weight: 400;
+  }
+}

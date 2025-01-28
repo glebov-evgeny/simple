@@ -1,8 +1,13 @@
 /* stylelint-disable */
 @use 'sass:math';
+@use 'sass:list';
 
-@function torem($px) {
-  @return math.div($px, 16) + rem;
+@function torem($pxs...) {
+  $rem-values: ();
+  @each $px in $pxs {
+    $rem-values: list.append($rem-values, calc(var(--scale) * $px));
+  }
+  @return $rem-values;
 }
 
 @mixin _1920 {
@@ -17,8 +22,8 @@
   }
 }
 
-@mixin _1140 {
-  @media screen and (min-width: 1140px) {
+@mixin _1200 {
+  @media screen and (min-width: 1200px) {
     @content;
   }
 }

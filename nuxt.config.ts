@@ -5,6 +5,7 @@ import eslintPlugin from 'vite-plugin-eslint';
 export default defineNuxtConfig({
   ssr: true,
   debug: true,
+
   vite: {
     plugins: [eslintPlugin()],
     css: {
@@ -74,4 +75,6 @@ export default defineNuxtConfig({
       FB_APP_ID: process.env.FB_APP_ID,
     },
   },
+
+  compatibilityDate: '2025-01-27',
 });
